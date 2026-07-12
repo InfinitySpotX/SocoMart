@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Details | SOCOMART</title>
+<meta name="description" content="View product details, specifications and reviews on SOCOMART.">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/products.css">
+<link rel="stylesheet" href="css/cart.css">
+<link rel="stylesheet" href="css/forms.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="product">
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="page-loader"><div class="spinner"></div></div>
+
+<header class="site-header">
+  <nav class="navbar container" aria-label="Main navigation">
+    <a href="index.html" class="brand"><span class="brand-mark">S</span> SOCOMART</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <form class="search-wrap" data-search-form role="search">
+      <div class="nav-search">
+        <input type="search" placeholder="Search products, brands…" aria-label="Search products">
+        <button type="submit" aria-label="Search">🔍</button>
+      </div>
+    </form>
+    <div class="nav-actions">
+      <button class="icon-btn" data-action="toggle-mobile-search" aria-label="Search">🔍</button>
+      <button class="icon-btn" data-action="toggle-theme" aria-label="Toggle dark mode">🌓</button>
+      <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">♥<span class="badge hidden" data-badge="wishlist">0</span></a>
+      <a href="cart.html" class="icon-btn" aria-label="Cart">🛒<span class="badge hidden" data-badge="cart">0</span></a>
+      <a href="checkout.html" class="icon-btn" aria-label="Profile">👤</a>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="products.html">Shop</a>
+    <a href="categories.html">Categories</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="container" data-pdp-root>
+    <div class="pdp">
+      <div class="pdp-gallery">
+        <div class="main-image"><img data-pdp-main-image src="" alt=""></div>
+        <div class="thumb-row" data-pdp-thumbs></div>
+      </div>
+      <div class="pdp-info">
+        <span class="brand-cat" data-pdp-brand-cat></span>
+        <h1 data-pdp-name></h1>
+        <div class="rating" data-pdp-rating></div>
+        <div class="price-block">
+          <span class="price-now" data-pdp-price-now></span>
+          <span class="price-old" data-pdp-price-old></span>
+          <span class="save-badge" data-pdp-save></span>
+        </div>
+        <p data-pdp-desc></p>
+        <p class="mono" style="font-size:var(--fs-xs); margin-top:var(--space-3);" data-pdp-stock></p>
+
+        <div class="mt-6">
+          <label class="flex items-center gap-3" style="font-size:var(--fs-xs); font-weight:600; text-transform:uppercase; letter-spacing:0.04em; color:var(--muted); margin-bottom:8px;">Quantity</label>
+          <div class="qty-selector">
+            <button data-pdp-qty-minus aria-label="Decrease quantity">−</button>
+            <span data-pdp-qty>1</span>
+            <button data-pdp-qty-plus aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+
+        <div class="pdp-actions">
+          <button class="btn btn-primary btn-block" data-pdp-add-cart>Add to cart</button>
+          <button class="btn btn-accent btn-block" data-pdp-buy-now>Buy now</button>
+          <button class="wishlist-toggle" style="position:static;" data-action="toggle-wishlist" data-pdp-wishlist aria-label="Toggle wishlist">♥</button>
+        </div>
+
+        <h4 class="mt-6" style="font-size:var(--fs-sm);">Key features</h4>
+        <ul class="pdp-meta-list" data-pdp-features></ul>
+      </div>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" data-tab="tab-specs" role="tab">Specifications</button>
+      <button class="tab-btn" data-tab="tab-reviews" role="tab">Reviews</button>
+    </div>
+    <div id="tab-specs" class="tab-panel active" role="tabpanel">
+      <table class="spec-table"><tbody data-pdp-specs></tbody></table>
+    </div>
+    <div id="tab-reviews" class="tab-panel" role="tabpanel">
+      <div class="review-item">
+        <div class="stars">★★★★★</div>
+        <div class="r-name">Aditi R.</div>
+        <div class="r-date">Verified purchase · 2 weeks ago</div>
+        <p class="mt-4">Exactly as described, arrived quickly and the quality feels premium for the price.</p>
+      </div>
+      <div class="review-item">
+        <div class="stars">★★★★☆</div>
+        <div class="r-name">Karthik M.</div>
+        <div class="r-date">Verified purchase · 1 month ago</div>
+        <p class="mt-4">Good value overall. Packaging could be sturdier but the product itself is great.</p>
+      </div>
+    </div>
+
+    <section class="mt-6">
+      <div class="section-head"><div><span class="eyebrow">You may also like</span><h2>Related products</h2></div></div>
+      <div class="product-grid" data-related-grid></div>
+    </section>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" style="color:var(--paper)"><span class="brand-mark">S</span> SOCOMART</a>
+        <p>A premium all-in-one online mall — electronics, fashion, home and more, priced honestly.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/socomart" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+          <a href="https://facebook.com/socomart" aria-label="Facebook" target="_blank" rel="noopener">FB</a>
+          <a href="https://youtube.com/@socomart" aria-label="YouTube" target="_blank" rel="noopener">YT</a>
+        </div>
+      </div>
+      <div><h4>Shop</h4><ul>
+        <li><a href="products.html">All products</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="wishlist.html">Wishlist</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul></div>
+      <div><h4>Company</h4><ul>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy policy</a></li>
+        <li><a href="terms.html">Terms of service</a></li>
+      </ul></div>
+      <div>
+        <h4>Stay in the loop</h4>
+        <p style="color:#8D95AC; font-size:var(--fs-sm)">Get offers and new arrivals in your inbox.</p>
+        <form class="footer-newsletter" data-newsletter-form>
+          <label for="newsletterEmail" class="hidden">Email address</label>
+          <input type="email" id="newsletterEmail" placeholder="you@example.com" required>
+          <button class="btn btn-accent btn-sm" type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SOCOMART. All rights reserved.</span>
+      <span>Built for GitHub Pages · Google Sheets ready</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/notification.js"></script>
+<script src="js/data.js"></script>
+<script src="js/products.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/search.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/api.js"></script>
+<script src="js/checkout.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

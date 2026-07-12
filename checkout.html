@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | SOCOMART</title>
+<meta name="description" content="Complete your SOCOMART order — enter delivery details and confirm your order.">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/products.css">
+<link rel="stylesheet" href="css/cart.css">
+<link rel="stylesheet" href="css/forms.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="checkout">
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="page-loader"><div class="spinner"></div></div>
+
+<header class="site-header">
+  <nav class="navbar container" aria-label="Main navigation">
+    <a href="index.html" class="brand"><span class="brand-mark">S</span> SOCOMART</a>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <form class="search-wrap" data-search-form role="search">
+      <div class="nav-search"><input type="search" placeholder="Search products, brands…" aria-label="Search products"><button type="submit" aria-label="Search">🔍</button></div>
+    </form>
+    <div class="nav-actions">
+      <button class="icon-btn" data-action="toggle-mobile-search" aria-label="Search">🔍</button>
+      <button class="icon-btn" data-action="toggle-theme" aria-label="Toggle dark mode">🌓</button>
+      <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">♥<span class="badge hidden" data-badge="wishlist">0</span></a>
+      <a href="cart.html" class="icon-btn" aria-label="Cart">🛒<span class="badge hidden" data-badge="cart">0</span></a>
+      <a href="checkout.html" class="icon-btn" aria-label="Profile">👤</a>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a><a href="products.html">Shop</a><a href="categories.html">Categories</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="container">
+    <span class="eyebrow">Checkout</span>
+    <h1 style="margin-block:var(--space-2) var(--space-4);">Complete your order</h1>
+    <div class="checkout-steps">
+      <span>1. Cart</span>
+      <span class="active">2. Delivery details</span>
+      <span>3. Confirmation</span>
+    </div>
+
+    <div class="checkout-layout">
+      <form data-checkout-form novalidate>
+        <h3>Delivery information</h3>
+        <div class="form-grid mt-4">
+          <div class="field full">
+            <label for="custName">Full name</label>
+            <input type="text" id="custName" name="name" data-validate="required name" required>
+            <span class="error-msg" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="custPhone">Phone number</label>
+            <input type="tel" id="custPhone" name="phone" data-validate="required phone" required>
+            <span class="error-msg" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="custEmail">Email</label>
+            <input type="email" id="custEmail" name="email" data-validate="required email" required>
+            <span class="error-msg" role="alert"></span>
+          </div>
+          <div class="field full">
+            <label for="custAddress">Address</label>
+            <textarea id="custAddress" name="address" data-validate="required minlength5" required></textarea>
+            <span class="error-msg" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="custDistrict">District</label>
+            <input type="text" id="custDistrict" name="district" data-validate="required" required>
+            <span class="error-msg" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="custState">State</label>
+            <input type="text" id="custState" name="state" data-validate="required" required>
+            <span class="error-msg" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="custPincode">Pincode</label>
+            <input type="text" id="custPincode" name="pincode" inputmode="numeric" data-validate="required pincode" required>
+            <span class="error-msg" role="alert"></span>
+          </div>
+        </div>
+
+        <h3 class="mt-6">Payment method</h3>
+        <div class="payment-options">
+          <label class="payment-option"><input type="radio" name="payment" value="COD" checked> Cash on delivery</label>
+          <label class="payment-option"><input type="radio" name="payment" value="UPI"> UPI (pay on delivery confirmation call)</label>
+          <label class="payment-option"><input type="radio" name="payment" value="Card"> Card (pay on delivery confirmation call)</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block mt-6">Confirm order</button>
+      </form>
+
+      <aside class="summary-card">
+        <h3>Order summary</h3>
+        <div data-order-lines class="mt-4"></div>
+        <div class="divider-ticket"></div>
+        <div class="summary-row"><span>Items (<span data-sum-count>0</span>)</span><span data-sum-subtotal class="mono">₹0</span></div>
+        <div class="summary-row"><span>Discount</span><span data-sum-discount class="mono">₹0</span></div>
+        <div class="summary-row"><span>Delivery</span><span data-sum-delivery class="mono">₹0</span></div>
+        <div class="summary-row total"><span>Total</span><span data-sum-total class="mono">₹0</span></div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom"><span>© 2026 SOCOMART. All rights reserved.</span><span>Built for GitHub Pages · Google Sheets ready</span></div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/notification.js"></script>
+<script src="js/data.js"></script>
+<script src="js/products.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/search.js"></script>
+<script src="js/wishlist.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/api.js"></script>
+<script src="js/checkout.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
