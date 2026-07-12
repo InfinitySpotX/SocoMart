@@ -1,0 +1,35 @@
+/* =========================================================
+   SOCOMART — Forms
+   ========================================================= */
+
+.form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:var(--space-4); }
+.field{ display:flex; flex-direction:column; gap:6px; margin-bottom:var(--space-4); }
+.field.full{ grid-column:1 / -1; }
+.field label{ font-size:var(--fs-xs); font-weight:600; text-transform:uppercase; letter-spacing:0.04em; color:var(--muted); }
+.field input,
+.field select,
+.field textarea{
+  padding:0.85em 1em;
+  border:1.5px solid var(--line);
+  border-radius:var(--radius-sm);
+  background:var(--white);
+  font-size:var(--fs-sm);
+  transition:border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 4px rgba(232,163,61,0.15);
+}
+.field textarea{ resize:vertical; min-height:120px; }
+.field.invalid input,
+.field.invalid select,
+.field.invalid textarea{ border-color:var(--danger); }
+.field .error-msg{
+  font-size:var(--fs-xs); color:var(--danger); min-height:1em;
+  display:none;
+}
+.field.invalid .error-msg{ display:block; }
+.checkbox-field{ display:flex; align-items:center; gap:var(--space-2); font-size:var(--fs-sm); }
+.checkbox-field input{ accent-color:var(--ink); width:16px; height:16px; }
